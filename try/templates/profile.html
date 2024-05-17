@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <!-- <link rel="stylesheet" href="order.css"> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}" />
+
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+</head>
+<body>
+          <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+                    <a class="navbar-brand" href="#"
+                      ><i class="fas fa-hamburger"></i> Burger King</a
+                    >
+                    <button
+                      class="navbar-toggler"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      aria-controls="navbarNav"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/project/"
+                            >Home <span class="sr-only">(current)</span></a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/about/">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/feature/">Features</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/chef/">Chef</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/menu/">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/booking/">Booking</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/contact/">Contact</a>
+                          
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/profile">Profile</a>
+                                    </li>
+                        </li>
+                        <li class="nav-item" style="margin-top: 10px; margin-left: 10px;">
+                          <a href="/cart/" style="color: rgba(0, 0, 0, 0.618); margin-right: 10px; align-items: center; margin-top: 10px; text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+                       
+              
+              
+                        {% if request.user.is_authenticated %}
+              
+                        <a href="/logout/" class="btn btn-outline-success" type="submit"
+                          >Logout</a
+                        >
+              
+                        {% else %}
+              
+                        <a href="/logout/" class="btn btn-outline-success" type="submit"
+                          >Logout</a
+                        >
+              
+                        {% endif %}
+                      </ul>
+                    </div>
+                  </nav>
+              
+                  <!-- Bootstrap JS -->
+                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Navbar top -->
+    <div class="navbar-top">
+        <div class="title">
+            <h1 style="color: green; font-weight: bold;">My Profile</h1>
+            
+        </div>
+
+        <!-- Navbar -->
+        <ul>
+            <li>
+                <a href="#message">
+                    <span class="icon-count">29</span>
+                    <i class="fa fa-envelope fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#notification">
+                    <span class="icon-count">59</span>
+                    <i class="fa fa-bell fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#sign-out">
+                    <i class="fa fa-sign-out-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- End -->
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+     <div class="sidenav">
+        <div class="profile">
+            <!-- <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100"> -->
+            <img src="https://img.freepik.com/premium-photo/icon-button-man_665280-69540.jpg?size=626&ext=jpg" alt="" width="100" height="100">
+
+            
+
+            <div class="name">
+                <h3 style="font-weight: bold;">User: {{request.user}}</h3>
+            </div>
+            <div class="job">
+                    <h5>Email: {{request.user.email}}</h5>
+            </div>
+        </div>
+
+        <div class="sidenav-url">               
+            <div class="url" style="border: 0.5px solid gray; width: 230px; background-color:whitesmoke; border-radius: 12px; padding: 5px; margin-left: 5px; height: 200px;">
+                <!-- <a href="#profile" class="active">Profile</a> -->
+                <h4>First_Name: {{orders.0.order.fname}}</h4>
+                <h4>Last_Name: {{orders.0.order.lname}}</h4>
+                <h4 style="color: green;">Mob No: {{orders.0.order.phone}}</h4>
+                <h5>Address: {{orders.0.order.address}}</h5>
+                <h4>City: {{orders.0.order.city}}</h4>
+                <h4>Country: {{orders.0.order.country}}</h4>
+                <h4 style="color: green;">Pincode: {{orders.0.order.pincode}}</h4>
+
+
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a href="#settings">Settings</a>
+                <hr align="center">
+            </div>
+        </div>
+    </div> 
+    <!-- End -->
+
+    <div class="containerr" style="margin-left: 250px;">
+          <div class="table-responsive">
+            <table class="table table-striped table-light table-hover" style="font-size: 15px;">
+              <tr>
+                <th>#orderID</th>
+                <th>#payment_method</th>
+                <th>paymentId</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Items</th>
+              </tr>
+              {% for o in orders %}
+              <tr>
+                <td>#{{o.order.tracking_no}}</td>
+                <td>{{o.order.payment_method}}</td>
+                <td>{{o.order.payment_id}}</td>
+                <td>{{o.order.total_price}}</td>
+                <td>
+                  <span
+                    class="badge {% if o.order.status == 'Out for Shipping' %} bg-info {% elif o.order.status == 'Pending' %} bg-warning {% elif o.order.status == 'Completed' %} bg-success {%endif%}"
+                    >{{o.order.status}}</span
+                  >
+                </td>
+                <td>
+                  {% for i in o.items %} {{i.receipe}}<br />
+                  {% endfor %}
+                </td>
+              </tr>
+    
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+
+    <!-- Main -->
+    <!-- <div class="main">
+        <h2>My Order</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td>ImDezCode</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>imdezcode@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td>Bali, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <td>Hobbies</td>
+                            <td>:</td>
+                            <td>Diving, Reading Book</td>
+                        </tr>
+                        <tr>
+                            <td>Job</td>
+                            <td>:</td>
+                            <td>Web Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Skill</td>
+                            <td>:</td>
+                            <td>PHP, HTML, CSS, Java</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</div> -->
+<!-- <h2>SOCIAL MEDIA</h2>
+<div class="card">
+    <div class="card-body">
+        <i class="fa fa-pen fa-xs edit"></i>
+        <div class="social-media">
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-snapchat fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+    </div>
+</div> -->
+    <!-- End -->
+</body>
+</html>
+          
+</body>
+</html>

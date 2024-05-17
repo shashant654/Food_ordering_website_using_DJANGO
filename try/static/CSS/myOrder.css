@@ -1,0 +1,360 @@
+/**
+ * CONTENTS
+ *
+ * VENDOR
+ * Bourbon...............A simple and lightweight mixin library for Sass. (http://bourbon.io/)
+ *
+ * BASE
+ * Settings...............Global settings for the site (SASS vars).
+ * Headings...............Heading tags h1,h2,h3 etc.
+ *
+ * OBJECTS
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ *
+ */
+/**
+ * Vendor; third-party styling libraries
+ */
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+/* line 2, ./client/vendor/neat/grid/box-sizing */
+html {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+        
+        /* line 7, ./client/vendor/neat/grid/box-sizing */
+        *, *:before, *:after {
+          -webkit-box-sizing: inherit;
+          -moz-box-sizing: inherit;
+          box-sizing: inherit; }
+        
+        /**
+         * Base styles; unclassed HTML elements etc.
+         */
+        /*------------------------------------*\
+            #SETTINGS
+        \*------------------------------------*/
+        /*------------------------------------*\
+            #MIXINS
+        \*------------------------------------*/
+        /**
+         * Please ensure to append all Venzee mixins with 'v-'
+         * which allows us to quickly identify mixins we created.
+         */
+        /**
+         * rem mixin that has a fallback to pixels 
+         * note: assumes base font size of 10 (easier math)
+         * based on:
+         * http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+         *
+            p {
+              @include v-rem(font-size, 1.6rem);
+              @include v-rem(padding, 20px 10px);
+            }
+            
+            -> CSS result:
+            p {
+              font-size: 16px; 
+              font-size: 1.6rem;
+              padding: 20px 10px;
+              padding: 2rem 1rem;
+            }
+         *
+         */
+        /**
+         * A shortcut for setting font-size in rem's while
+         * calculing line-height based on the golden ratio
+         * based on:
+         * http://gregrickaby.com/using-the-golden-ratio-and-rems/
+         *
+            p {
+              @include v-font-size(1.6rem);
+            }
+            
+            -> CSS result:
+            p {
+              font-size: 16px; 
+              font-size: 1.6rem;
+              line-height: 1.625;
+            }
+         *
+         */
+        /*------------------------------------*\
+            #TYPOGRAPHY
+        \*------------------------------------*/
+        /**
+         * All browsers have a default font-size of 16px, 
+         * which results in a font-size of 10px (10 / 16 * 100 = 62.5).
+         *
+         */
+        /* line 10, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/typography */
+        html {
+          font-size: 62.5%; }
+        
+        /**
+         * Setting a font-size of 1.6rem on the body 
+         * results in a font-size of 16px, cascading 
+         * through the whole DOM tree.
+         * 
+         */
+        /* line 22, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/typography */
+        body {
+          font-size: 16px;
+          font-size: 1.6rem;
+          line-height: 1.625; }
+        
+        /*------------------------------------*\
+            #HEADINGS
+        \*------------------------------------*/
+        /* line 10, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h1, h2, h3, h4, h5, h6 {
+          font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+          line-height: 1.25;
+          margin: 0;
+          text-rendering: optimizeLegibility; }
+        
+        /* line 17, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h1 {
+          font-size: 3.6rem; }
+        
+        /* line 21, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h2 {
+          font-size: 3.2rem; }
+        
+        /* line 25, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h3 {
+          font-size: 2.8rem; }
+        
+        /* line 29, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h4 {
+          font-size: 2.4rem; }
+        
+        /* line 33, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h5 {
+          font-size: 2rem; }
+        
+        /* line 37, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/headings */
+        h6 {
+          font-size: 1.6rem; }
+        
+        /* line 1, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .table-grid {
+          max-width: em(1024);
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid #CCC; }
+          /* line 15, ./client/vendor/bourbon/addons/clearfix */
+          .table-grid:after {
+            content: "";
+            display: table;
+            clear: both; }
+        
+        /* line 7, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .table-grid__row {
+          display: block;
+          padding: 5px 0;
+          border-bottom: 1px solid #CCC;
+          background: #FFF; }
+          /* line 15, ./client/vendor/bourbon/addons/clearfix */
+          .table-grid__row:after {
+            content: "";
+            display: table;
+            clear: both; }
+          /* line 13, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .table-grid__row:last-child {
+            border-bottom: none; }
+          /* line 16, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .table-grid__row:nth-child(odd) {
+            background: #d5eefb; }
+        
+        /* line 22, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .table-grid__row--heading {
+          display: none;
+          border-bottom: 1px solid #CCC;
+          background: #CCC !important;
+          font-weight: bold; }
+        
+        /* line 29, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .mobile-avialble {
+          margin: 5px 0 0 0; }
+        
+        /* line 32, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-check {
+          float: left;
+          display: block;
+          margin-right: 3.5786636068%;
+          width: 9.3686693441%; }
+          /* line 85, ./client/vendor/neat/grid/span-columns */
+          .product-check:last-child {
+            margin-right: 0; }
+        
+        /* line 35, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-img {
+          float: left;
+          display: block;
+          margin-right: 3.5786636068%;
+          width: 22.3160022949%; }
+          /* line 85, ./client/vendor/neat/grid/span-columns */
+          .product-img:last-child {
+            margin-right: 0; }
+          /* line 38, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-img img {
+            width: 100%; }
+        
+        /* line 48, ./client/vendor/neat/grid/omega */
+        .product-name:last-child {
+          margin-right: 0; }
+        
+        /* line 43, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-sku {
+          clear: left; }
+          /* line 46, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-sku:before {
+            content: attr(data-th) ": "; }
+        
+        /* line 50, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-price {
+          clear: left; }
+          /* line 53, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-price:before {
+            content: attr(data-th) ": "; }
+        
+        /* line 57, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-status {
+          display: none; }
+        
+        /* line 60, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+        .product-variants {
+          clear: left; }
+          /* line 63, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-variants:before {
+            content: attr(data-th) ": "; }
+        
+        @media screen and (min-width: 769px) {
+          /* line 70, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .table-grid__row--heading {
+            display: block; }
+            /* line 73, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+            .table-grid__row--heading .product-name {
+              float: left;
+              display: block;
+              margin-right: 1.165091401%;
+              width: 53.6326664412%; }
+              /* line 85, ./client/vendor/neat/grid/span-columns */
+              .table-grid__row--heading .product-name:last-child {
+                margin-right: 0; }
+        
+          /* line 78, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .mobile-avialble {
+            display: none; }
+        
+          /* line 79, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-check {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 3.0501207408%; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-check:last-child {
+              margin-right: 0; }
+        
+          /* line 82, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-img {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 11.4805450242%; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-img:last-child {
+              margin-right: 0; }
+        
+          /* line 85, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-name {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 36.7718178744%; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-name:last-child {
+              margin-right: 0; }
+        
+          /* line 88, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-price {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 11.4805450242%;
+            clear: none; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-price:last-child {
+              margin-right: 0; }
+            /* line 92, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+            .product-price:before {
+              content: '';
+              display: none; }
+        
+          /* line 94, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-sku {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 11.4805450242%;
+            clear: none; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-sku:last-child {
+              margin-right: 0; }
+            /* line 98, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+            .product-sku:before {
+              content: '';
+              display: none; }
+        
+          /* line 100, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-status {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 11.4805450242%; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-status:last-child {
+              margin-right: 0; }
+        
+          /* line 103, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+          .product-variants {
+            float: left;
+            display: block;
+            margin-right: 1.165091401%;
+            width: 7.2653328825%;
+            clear: none; }
+            /* line 85, ./client/vendor/neat/grid/span-columns */
+            .product-variants:last-child {
+              margin-right: 0; }
+            /* line 107, /Users/ryanjohnson/projects/venzee/venzee.com/client/scss/base/tables */
+            .product-variants:before {
+              content: '';
+              display: none; }
+         }
+        
+        /**
+         * Objects and abstractions
+         */
+        /**
+         * Objects and abstractions
+         */
+        /**
+         * Components
+         */
+        /*# sourceMappingURL=main.css.map */

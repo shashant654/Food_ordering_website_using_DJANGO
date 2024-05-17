@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ----------------------------------------->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+      <a class="navbar-brand" href="#"
+        ><i class="fas fa-hamburger"></i> Burger King</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="project.html"
+              >Home <span class="sr-only">(current)</span></a
+            > -->
+          <li class="nav-item active">
+            <a class="nav-link" href="project.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feature/">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chef/">Chef</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/menu/">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/booking/">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact/">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+
+          <li class="nav-item" style="margin-top: 10px; margin-left: 10px">
+            <a
+              href="/cart/"
+              style="
+                color: rgba(0, 0, 0, 0.618);
+                margin-right: 10px;
+                align-items: center;
+                margin-top: 10px;
+              "
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </li>
+
+          {% if request.user.is_authenticated %}
+
+          <a href="/logout/" class="btn btn-outline-success" type="submit"
+            >Logout</a
+          >
+
+          {% else %}
+
+          <a href="/login/" class="btn btn-outline-success" type="submit"
+            >Login</a
+          >
+
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <!-- <img src="./images/carousel-1.jpg" class="d-block w-100 " style="height: 600px; opacity: 1;"  alt="..."> -->
+          <img
+            src="{% static '/carousel-1.jpg' %}"
+            class="d-block w-100"
+            style="height: 600px; opacity: 0.8"
+            alt=""
+          />
+
+          <div
+            class="carousel-caption d-none d-md-block"
+            style="margin-bottom: 230px"
+          >
+            <h3
+              class="fs-1 fw-bold"
+              style="
+                color: whitesmoke;
+                opacity: 4;
+                color: green;
+                margin-bottom: 40px;
+              "
+            >
+              World's
+              <span fs-1 fw-bold style="color: orange; opacity: 2">Best</span>
+              Chef
+            </h3>
+            <p
+              style="
+                color: black;
+                font-weight: 500;
+                margin-bottom: 20px;
+                opacity: 5;
+              "
+            >
+              Some representative placeholder content for the first slide.Some
+              representative placeholder content for the first slide placeholder
+              content for the first slide.Some representative placeholder
+            </p>
+            <div class="col" style="margin-top: 30px">
+              <a href="/show/">
+                <button
+                  type="button"
+                  class="bg-success rounded rounded-3 rounded fw-medium"
+                  style="height: 50px; width: 125px; border: none; color: white"
+                >
+                  View Menu
+                </button></a
+              >
+              <button
+                type="button"
+                class="bg-warning rounded rounded-3 fw-medium"
+                style="
+                  height: 50px;
+                  width: 125px;
+                  border: none;
+                  color: whitesmoke;
+                  margin-left: 5px;
+                "
+              >
+                Book Table
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------  -->
+
+        <div class="carousel-item" data-bs-interval="2000">
+          <!-- <img src="./images/carousel-2.jpg" class="d-block w-100" alt="..."> -->
+          <img
+            src="{% static '/carousel-2.jpg' %}"
+            class="d-block w-100"
+            style="height: 600px; opacity: 0.8"
+            alt="..."
+          />
+
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div> -->
+          <div
+            class="carousel-caption d-none d-md-block"
+            style="margin-bottom: 230px"
+          >
+            <h3
+              class="fs-1 fw-bold"
+              style="color: whitesmoke; opacity: 4; color: green"
+            >
+              World's
+              <span fs-1 fw-bold style="color: orange; opacity: 2">Best</span>
+              Chef
+            </h3>
+            <p
+              style="
+                color: green;
+                font-weight: 500;
+                margin-top: 50px;
+                opacity: 5;
+              "
+            >
+              Some representative placeholder content for the first slide.Some
+              representative placeholder content for the first slide placeholder
+              content for the first slide.Some representative placeholder
+            </p>
+            <div class="col" style="margin-top: 30px">
+              <a href="/show/">
+                <button
+                  type="button"
+                  class="bg-success rounded rounded-3 rounded fw-medium"
+                  style="height: 50px; width: 125px; border: none; color: white"
+                >
+                  View Menu
+                </button></a
+              >
+              <button
+                type="button"
+                class="bg-warning rounded rounded-3 fw-medium"
+                style="
+                  height: 50px;
+                  width: 125px;
+                  border: none;
+                  color: whitesmoke;
+                  margin-left: 5px;
+                "
+              >
+                Book Table
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <!-- <img src="./images/carousel-3.jpg" class="d-block w-100" alt="..."> -->
+          <img
+            src="{% static '/carousel-3.jpg' %}"
+            class="d-block w-100"
+            style="height: 600px; opacity: 0.8"
+            alt="..."
+          />
+
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div> -->
+          <div
+            class="carousel-caption d-none d-md-block"
+            style="margin-bottom: 230px"
+          >
+            <h3
+              class="fs-1 fw-bold"
+              style="color: whitesmoke; opacity: 4; color: green"
+            >
+              World's
+              <span fs-1 fw-bold style="color: orange; opacity: 2">Best</span>
+              Chef
+            </h3>
+            <p
+              style="
+                color: black;
+                font-weight: 500;
+                margin-top: 50px;
+                opacity: 5;
+              "
+            >
+              Some representative placeholder content for the first slide.Some
+              representative placeholder content for the first slide placeholder
+              content for the first slide.Some representative placeholder
+            </p>
+            <div class="col" style="margin-top: 30px">
+              <a href="/show/">
+                <button
+                  type="button"
+                  class="bg-success rounded rounded-3 rounded fw-medium"
+                  style="height: 50px; width: 125px; border: none; color: white"
+                >
+                  View Menu
+                </button></a
+              >
+              <button
+                type="button"
+                class="bg-warning rounded rounded-3 fw-medium"
+                style="
+                  height: 50px;
+                  width: 125px;
+                  border: none;
+                  color: whitesmoke;
+                  margin-left: 5px;
+                "
+              >
+                Book Table
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container-2">
+      <div class="main">
+        <div class="left">
+          <div class="upper">
+            <h4>Book A Table</h4>
+            <h1>Book Your Table For Private</h1>
+            <h1>Dinners & Happy Hours</h1>
+          </div>
+          <div class="lower">
+            <div class="lorem">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                viverra quis sem.
+              </p>
+            </div>
+            <div class="lorem-2">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                viverra quis sem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <form action="" class="form">
+            <input type="text" name="" id="" placeholder="Name" />
+            <input type="email" name="" id="" placeholder="Email" />
+            <input type="mobile" name="" id="" placeholder="Mobile" />
+            <input type="date" name="" id="" placeholder="Date" />
+            <input type="time" name="" id="" placeholder="Time" />
+            <input type="text" name="" id="" placeholder="Guest" />
+            <a href="#"><button type="button">Book Now</button></a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------ -->
+
+    <div class="container-3">
+      <div class="main">
+        <div class="left">
+          <!-- <img src="./images/about.jpg" alt="" /> -->
+          <img src="{% static '/about.jpg' %}" alt="" />
+        </div>
+
+        <div class="right">
+          <div class="upper">
+            <h4>About Us</h4>
+            <h2>Cooking Since 1990</h2>
+          </div>
+
+          <div class="lower">
+            <div class="lorem">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                viverra quis sem.
+              </p>
+            </div>
+            <div class="lorem-2">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                viverra quis sem.
+              </p>
+            </div>
+            <a href="#"><button type="button">Book A Table</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------------  -->
+    <div class="container-4">
+      <div class="main-4">
+        <div class="left-4">
+          <h4>Why Choose Us</h4>
+          <h1>Our Key Features</h1>
+          <div class="img-cls">
+            <div class="img-first">
+              <!-- <img src="./images/feature-1.jpg" alt="" /> -->
+              <!-- <img src="./images/feature-2.jpg" alt="" /> -->
+              <img src="{% static '/feature-1.jpg' %}" alt="" />
+              <img src="{% static '/feature-2.jpg' %}" alt="" />
+            </div>
+            <div class="img-second">
+              <!-- <img src="./images/feature-3.jpg" alt="" /> -->
+              <!-- <img src="./images/feature-4.jpg" alt="" /> -->
+              <img src="{% static '/feature-3.jpg' %}" alt="" />
+              <img src="{% static '/feature-4.jpg' %}" alt="" />
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+            harum nulla beatae recusandae quidem error libero quod aliquid
+            repudiandae impedit voluptatem asperiores, facilis sunt blanditiis
+            ut magni tempora.
+          </p>
+          <a href="#"><button type="button">Make A Table</button></a>
+        </div>
+
+        <div class="right-4">
+          <div class="firstt">
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+          </div>
+
+          <div class="secondd">
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+            <div class="chef">
+              <!-- <img src="./images/chef.png" alt="" /> -->
+              <img src="{% static '/chef.png' %}" alt="" />
+
+              <h3>Word's best Chef</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                corrupti, omnis modi impedit maxime
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------------------------------  -->
+    <div class="container-5">
+      <div class="box">
+        <div class="box-1">
+          <!-- <img src="./images/chef.png" alt="" /> -->
+          <img src="{% static '/chef.png' %}" alt="" />
+
+          <h2>Burgers</h2>
+          <div class="para">
+            <p>Lorem ipsum dolor sit amet, consectetur consectetur</p>
+            <p>Lorem ipsum dolor sit amet, consectetur amet</p>
+            <p>Lorem ipsum dolor sit amet,</p>
+          </div>
+          <a href="#">View Menu</a>
+        </div>
+
+        <div class="box-1">
+          <!-- <img src="./images/chef.png" alt="" /> -->
+          <img src="{% static '/chef.png' %}" alt="" />
+
+          <h2>Burgers</h2>
+          <div class="para">
+            <p>Lorem ipsum dolor sit amet, consectetur consectetur</p>
+            <p>Lorem ipsum dolor sit amet, consectetur amet</p>
+            <p>Lorem ipsum dolor sit amet,</p>
+          </div>
+          <a href="#">View Menu</a>
+        </div>
+
+        <div class="box-1">
+          <!-- <img src="./images/chef.png" alt="" /> -->
+          <img src="{% static '/chef.png' %}" alt="" />
+
+          <h2>Burgers</h2>
+          <div class="para">
+            <p>Lorem ipsum dolor sit amet, consectetur consectetur</p>
+            <p>Lorem ipsum dolor sit amet, consectetur amet</p>
+            <p>Lorem ipsum dolor sit amet,</p>
+          </div>
+          <a href="#">View Menu</a>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------  -->
+
+    <div class="container-6">
+      <div class="menu-page">
+        <div class="menu-1">
+          <h4>Food Menu</h4>
+          <h2>Delicious Food Menu</h2>
+        </div>
+        <div class="btn">
+          <a href="#"><button type="button" class="btn-1">Burger</button></a>
+          <a href="#"><button type="button" class="btn-2">Snacks</button></a>
+          <a href="#"
+            ><button type="button" class="btn-3">Bevearages</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------  -->
+    <div class="container-7">
+      <div class="Menu">
+        <div class="left-menu">
+          <div class="mini">
+            <!-- <img src="./images/menu-burger.jpg" alt="" /> -->
+            <img src="{% static '/menu-burger.jpg' %}" alt="" />
+
+            <div class="mini-para">
+              <h4>Mini Cheese Burger ....................................</h4>
+              <p>Lorem ipsum dolor sit amet consectetur amet</p>
+            </div>
+            <h4>$9.00</h4>
+          </div>
+
+          <div class="mini">
+            <!-- <img src="./images/menu-burger.jpg" alt="" /> -->
+            <img src="{% static '/menu-burger.jpg' %}" alt="" />
+
+            <div class="mini-para">
+              <h4>Mini Cheese Burger ....................................</h4>
+              <p>Lorem ipsum dolor sit amet consectetur amet</p>
+            </div>
+            <h4>$9.00</h4>
+          </div>
+
+          <div class="mini">
+            <!-- <img src="./images/menu-burger.jpg" alt="" /> -->
+            <img src="{% static '/menu-burger.jpg' %}" alt="" />
+
+            <div class="mini-para">
+              <h4>Mini Cheese Burger ....................................</h4>
+              <p>Lorem ipsum dolor sit amet consectetur amet</p>
+            </div>
+            <!-- <h3>$9.00</h3> -->
+            <h4>$9.00</h4>
+          </div>
+
+          <div class="mini">
+            <!-- <img src="./images/menu-burger.jpg" alt="" /> -->
+            <img src="{% static '/menu-burger.jpg' %}" alt="" />
+
+            <div class="mini-para">
+              <h4>Mini Cheese Burger ....................................</h4>
+              <p>Lorem ipsum dolor sit amet consectetur amet</p>
+            </div>
+            <!-- <h3>$9.00</h3> -->
+            <h4>$9.00</h4>
+          </div>
+
+          <!-- <div class="mini">
+            <img src="./images/menu-burger.jpg" alt="" />
+            <div class="mini-para">
+              <h4>Mini Cheese Burger ....................................</h4>
+              <p>Lorem ipsum dolor sit amet consectetur amet</p>
+            </div>
+            <h4>$9.00</h4>
+
+          </div> -->
+        </div>
+
+        <div class="right-menu">
+          <!-- <img src="./images/menu-burger-img.jpg" alt="" /> -->
+          <img src="{% static '/menu-burger-img.jpg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------  -->
+
+    <div class="container-8">
+      <div class="Master">
+        <h4>Our Team</h4>
+        <h2>Our Master Chef</h2>
+      </div>
+
+      <div class="picture">
+        <div class="img-1">
+          <!-- <img src="./images/team-1.jpg" alt="" /> -->
+          <img src="{% static '/team-1.jpg' %}" alt="" />
+
+          <h3>Adam Philips</h3>
+          <p>CEO, Co Founder</p>
+        </div>
+
+        <div class="img-1">
+          <!-- <img src="./images/team-2.jpg" alt="" /> -->
+          <img src="{% static '/team-2.jpg' %}" alt="" />
+
+          <h3>Adam Philips</h3>
+          <p>CEO, Co Founder</p>
+        </div>
+
+        <div class="img-1">
+          <!-- <img src="./images/team-3.jpg" alt="" /> -->
+          <img src="{% static '/team-3.jpg' %}" alt="" />
+
+          <h3>Adam Philips</h3>
+          <p>CEO, Co Founder</p>
+        </div>
+
+        <div class="img-1">
+          <!-- <img src="./images/team-4.jpg" alt="" /> -->
+          <img src="{% static '/team-4.jpg' %}" alt="" />
+
+          <h3>Adam Philips</h3>
+          <p>CEO, Co Founder</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------  -->
+    <div class="container_7">
+      <div
+        class="carousel"
+        aria-label="Featured Items Carousel"
+        aria-roledescription="carousel"
+      >
+        <header>
+          <div class="controls">
+            <button
+              id="prevBtn"
+              aria-label="Previous"
+              title="Previous"
+              onclick="Scroller.scrollBy(-516, 0)"
+            >
+              <svg
+                width="10"
+                height="15"
+                viewBox="0 0 10 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.71833 15L0 7.5L8.71833 0L10 1.10257L2.56337 7.5L10 13.8974L8.71833 15Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+            <button
+              id="nextBtn"
+              aria-label="Next"
+              title="Next"
+              onclick="Scroller.scrollBy(516, 0)"
+            >
+              <svg
+                width="10"
+                height="15"
+                viewBox="0 0 10 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1.28167 15L10 7.5L1.28167 0L1.72702e-07 1.10257L7.43663 7.5L1.72702e-07 13.8974L1.28167 15Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div
+          id="Scroller"
+          class="myCarousel"
+          role="group"
+          aria-label="Items Scroller"
+          aria-live="polite"
+        >
+          <a
+            href="/"
+            class="snap"
+            aria-label="1 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-1.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+          <!-- --------------------------------------------  -->
+          <a
+            href="/"
+            class="snap"
+            aria-label="2 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-2.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+          <!-- ---------------------------------------------------------  -->
+          <a
+            href="/"
+            class="snap"
+            aria-label="3 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-3.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+          <!-- --------------------------------  -->
+          <a
+            href="/"
+            class="snap"
+            aria-label="4 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-4.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+          <!-- --------------------------------------------------  -->
+          <a
+            href="/"
+            class="snap"
+            aria-label="5 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-1.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+          <!-- ------------------------------------------------------------  -->
+          <a
+            href="/"
+            class="snap"
+            aria-label="6 of 6"
+            aria-roledescription="item"
+          >
+            <div class="cls-box-1">
+              <div class="imag">
+                <!-- <img src="./images/testimonial-1.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-2.jpg' %}" alt="" />
+              </div>
+
+              <div class="description">
+                <div class="paragraph">
+                  <p>Lorem ipsum dolor sit amet conse</p>
+                  <p>Lorem ipsum dolor sit amet consr</p>
+                  <p>consectetur</p>
+                </div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------  -->
+
+    <div class="container-9">
+      <div class="Contact-us">
+        <div class="query">
+          <h4>Contact Us</h4>
+          <h1>Contact For Any Query</h1>
+        </div>
+      </div>
+
+      <div class="icon-cls">
+        <div class="sub-icon">
+          <div class="first">
+            <!-- <img src="./images/map.png" alt="" /> -->
+            <img src="{% static '/map.png' %}" alt="" />
+
+            <div class="address">
+              <h4>Address</h4>
+              <p>123 Street, NY, USA</p>
+            </div>
+          </div>
+
+          <div class="first">
+            <!-- <img src="./images/call.jpeg" alt="" /> -->
+            <img src="{% static '/call.jpeg' %}" alt="" />
+
+            <div class="address">
+              <h4>Call Us</h4>
+              <p>+012 345 6789</p>
+            </div>
+          </div>
+
+          <div class="first">
+            <!-- <img src="./images/mail.jpeg" alt="" /> -->
+            <img src="{% static '/mail.jpeg' %}" alt="" />
+
+            <div class="address">
+              <h4>Email Us</h4>
+              <p>info@example.com</p>
+            </div>
+          </div>
+
+          <div class="direction">
+            <img src="{% static '/direction.png' %}" alt="" />
+
+            <div class="address">
+              <h4>Follow Us</h4>
+              <div class="icons">
+                <img src="{% static '/twitter.png' %}" alt="" />
+
+                <img src="{% static '/facebook.png' %}" alt="" />
+
+                <img src="{% static '/youtube.png' %}" alt="" />
+
+                <img src="{% static '/insta.png' %}" alt="" />
+
+                <img src="{% static '/linkedin.png' %}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-cls">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.5966728054796!2d76.81747407385666!3d30.70162218713854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fedadde4b5d07%3A0xba2cc506ae36c310!2sChandigarh%20Railway%20Station%20Ticket%20Counter!5e0!3m2!1sen!2sin!4v1711972249468!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          border-readus="20px"
+        ></iframe>
+
+        <div class="form">
+          <form action="" class="form-cls">
+            <input type="text" name="" id="" placeholder="Your Name" />
+            <input type="email" name="" id="" placeholder="Your Email" />
+            <input type="text" name="" id="" placeholder="Subject" />
+            <textarea name="" id="" cols="30" rows="8">Message</textarea>
+            <a href="#"><button type="button">Send Message</button></a>
+          </form>
+        </div>
+      </div>
+
+      <!-- ----------------------------------  -->
+      <div class="food-blog">
+        <h4>Food Blog</h4>
+        <h1>Latest From Food Blog</h1>
+      </div>
+
+      <!-- -------------------------------------------  -->
+
+      <div class="blog-page">
+        <div class="blog">
+          <div class="img-class">
+            <!-- <img src="./images/blog-1.jpg" alt="" /> -->
+            <img src="{% static '/blog-1.jpg' %}" alt="" />
+          </div>
+
+          <div class="blog-feedback">
+            <div class="feedback">
+              <div class="user">
+                <!-- <img src="./images/testimonial-2.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-2.jpg' %}" alt="" />
+
+                <h4>Lorem ipsum do</h4>
+              </div>
+              <div class="blog-para">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sapiente autem aspernatur consequatur quibusdam, ad tempora, a
+                  quidem est non quaerat quae! Doloribus molestias ex
+                  asperiores, quaerat recusandae incidunt?
+                </p>
+              </div>
+              <div class="blog-btn">
+                <a href="#"><button type="button">Read More</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ---------------------------  -->
+
+        <div class="blog">
+          <div class="img-class">
+            <!-- <img src="./images/feature-2.jpg" alt="" /> -->
+            <img src="{% static '/feature-2.jpg' %}" alt="" />
+          </div>
+
+          <div class="blog-feedback">
+            <div class="feedback">
+              <div class="user">
+                <!-- <img src="./images/testimonial-3.jpg" alt="" /> -->
+                <img src="{% static '/testimonial-3.jpg' %}" alt="" />
+
+                <h4>Lorem ipsum do</h4>
+              </div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Sapiente autem aspernatur consequatur quibusdam, ad tempora, a
+                quidem est non quaerat quae! Doloribus commodi molestias ex
+                asperiores, quaerat recusandae
+              </p>
+              <a href="#"><button type="button">Read More</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------  -->
+
+    <div class="footer-section">
+      <div class="footer-first">
+        <div class="footer">
+          <h4>Our Address</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="footer-map">
+            <!-- <img src="./images/map.png" alt="" /> -->
+            <img src="{% static '/map.png' %}" alt="" />
+
+            <p>123 Street, New York, USA</p>
+          </div>
+
+          <div class="footer-call">
+            <!-- <img src="./images/call.jpeg" alt="" /> -->
+            <img src="{% static '/call.jpeg' %}" alt="" />
+
+            <p>+012 345 67890</p>
+          </div>
+
+          <div class="footer-mail">
+            <!-- <img src="./images/mail.jpeg" alt="" /> -->
+            <img src="{% static '/mail.jpeg' %}" alt="" />
+
+            <p>info@example.com</p>
+          </div>
+
+          <div class="footer-icon">
+            <!-- <img src="./images/twitter.png" alt="" />
+            <img src="./images/facebook.png" alt="" />
+            <img src="./images/youtube.png" alt="" />
+            <img src="./images/insta.png" alt="" />
+            <img src="./images/linkedin.png" alt="" /> -->
+            <img src="{% static '/twitter.png' %}" alt="" />
+            <img src="{% static '/facebook.png' %}" alt="" />
+            <img src="{% static '/youtube.png' %}" alt="" />
+            <img src="{% static '/insta.png' %}" alt="" />
+            <img src="{% static '/linkedin.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-second">
+        <div class="footer">
+          <h4>Quick Links</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+            <!-- <a href="#">Terms of use</a> -->
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <!-- <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="footer-third">
+        <div class="footer">
+          <h4>Newsletter</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="footer-para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              beatae unde perspiciatis voluptate harum. Sit quibusdam corrupti
+              sapiente vero
+            </p>
+          </div>
+
+          <div class="footer-input">
+            <input type="text" name="" id="" placeholder="Email goes here" />
+            <a href="#"><button type="submit">Submit</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------- -->
+
+    <div class="last-cls">
+      <div class="lastest">
+        <p>
+          Copyright @ <span>Your Site Name</span>, All Right Reserved. Designed
+          By <span>HTML Codex</span>
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const lastElem = Scroller.lastElementChild;
+    const firstElem = Scroller.firstElementChild;
+
+    let isAtEnd;
+    let isAtStart;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isAtEnd = entry.isIntersecting && lastElem === entry.target;
+          isAtStart = entry.isIntersecting && firstElem === entry.target;
+          updateControls();
+        });
+      },
+      { root: Scroller, threshold: 0.5 }
+    );
+
+    observer.observe(lastElem);
+    observer.observe(firstElem);
+
+    function updateControls() {
+      // If the document direction is right-to-left (RTL), swap the values of isAtStart and isAtEnd
+      if (document.firstElementChild.getAttribute("dir") === "rtl")
+        [isAtStart, isAtEnd] = [isAtEnd, isAtStart];
+
+      if (document.activeElement === nextBtn && isAtEnd) {
+        prevBtn.focus();
+      } else if (document.activeElement === prevBtn && isAtStart) {
+        nextBtn.focus();
+      }
+
+      nextBtn.toggleAttribute("disabled", isAtEnd);
+      prevBtn.toggleAttribute("disabled", isAtStart);
+    }
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>

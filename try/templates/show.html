@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/show.css' %}" />
+
+    
+  </head>
+  <body>
+
+
+    {% for i in data %}
+    <!-- <div class="show"> -->
+    <div class="card-wrap">
+      <div class="card-header">
+        <i class="fas fa-code"></i>
+      </div>
+      <!-- src="/static/images {{i.receipe_image}}" -->
+
+      <div class="card-content">
+        <img
+          src="{% static 'images/' %}{{i.receipe_image.name}}"        
+          style="
+            height: 110px;
+            width: 120px;
+            border-radius: 10px;
+            margin-top: 5px;
+          "
+          alt=""
+        />
+
+        <form action="/cart/" method="post">
+          {% csrf_token %}
+
+          <input
+            type="hidden"
+            name="receipe_name"
+            id=""
+            value="{{i.receipe_name}}"
+          />
+
+          <h3 class="card-titel" style="color: orange; text-align: center">
+            {{i.receipe_name }}
+          </h3>
+          <p class="card-text">{{i.receipe_description}}</p>
+          <!-- <input
+          type="hidden"
+          name="receipe_category"
+          id=""
+          value="{{i.category}}"
+        /> -->
+          <!-- <p class="card-text">{{i.category}}</p> -->
+          <h4 class="card-text">Price: {{i.price}}.00</h4>
+          <!-- <div class="amount-box">
+            <div
+              class="minus-box"
+              data="#cartnumber{{i.id}}"
+              onclick="minusf(this)"
+            >
+              <i class="fa-solid fa-minus"></i>
+            </div>
+            <input
+              type="number"
+              name="amount"
+              value="1"
+              min="0"
+              max="10"
+              class="amount"
+              id="amount"
+            />
+            <input
+              type="hidden"
+              name="price"
+              class="price"
+              id="price"
+              value="{{i.price}}"
+            />
+            <div
+              class="plus-box"
+              data="#cartnumber{{i.id}}"
+              onclick="plusf(this)"
+            >
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div> -->
+          <div class="" style="display: flex; gap: 10px">
+            <!-- <a href=""
+              ><button class="card-btn one" type="submit">BUY</button></a
+            > -->
+            <div class="amount-box" style="margin-top: 2px;">
+              <div
+                class="minus-box"
+                data="#cartnumber{{i.id}}"
+                onclick="minusf(this)"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </div>
+              
+              <input
+                type="number"
+                name="amount"
+                value="1"
+                min="0"
+                max="10"
+                class="amount"
+                id="amount"
+                style="color: green;"
+              />
+              <input
+                type="hidden"
+                name="price"
+                class="price"
+                id="price"
+                value="{{i.price}}"
+              />
+              <div
+                class="plus-box"
+                data="#cartnumber{{i.id}}"
+                onclick="plusf(this)"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+            <a href=""
+              ><button class="card-btn one" type="submit">ADD</button></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- </div> -->
+    {% endfor %}
+  </body>
+</html>
+
+
+<!-- ------------------------------------------------------  -->
+<!-- external css alwasy bootstrap k baad honi chahiye  -->
+<!-- h1 tag sirf only one honi chahiye  -->
+<!-- always use semantic tags  -->
+<!-- navbar me image ko anchor tag and other ul li a format me rkhna chahiye  -->
+
+<!--  -->

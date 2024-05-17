@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="contact.css"> -->
+    <link rel="stylesheet" href="{% static 'CSS/register.css' %}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+      <a class="navbar-brand" href="#"
+        ><i class="fas fa-hamburger"></i> Burger King</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/project/"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feature/">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chef/">Chef</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/menu/">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/booking/">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact/">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+
+          <li class="nav-item" style="margin-top: 10px; margin-left: 10px;">
+            <a href="/cart/" style="color: rgba(0, 0, 0, 0.618); margin-right: 10px; align-items: center; margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+
+          {% if request.user.is_authenticated  %}
+
+          <a href="/logout/" class="btn btn-outline-success" type="submit">Logout</a>
+
+          {% else %}
+
+          <a href="/logout/" class="btn btn-outline-success" type="submit">Logout</a>
+
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!-- ----------------------------------------------------------------------------------------------------  -->
+    <div class="container mt-5">
+          <form
+            class="col-6 mx-auto card p-3 shadow-lg"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <h2>Register Page</h2>
+            <hr />
+      
+            {% if messages %}
+      
+            <div class="alert alert-primary" role="alert">
+              {% for message in messages %} {{message}} {% endfor %}
+            </div>
+      
+            {% endif %}
+      
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="first_name"
+                id="exampleInputEmail1"
+              />
+            </div>
+      
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                class="form-control"
+                id="exampleInputEmail1"
+              />
+            </div>
+      
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="username"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+      
+            <p>Already have an account <a href="/login/">Login</a></p>
+      
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </form>
+        </div>
+   
+
+    <!-- -------------------------------------------------------------------------------------------------------------  -->
+    <div class="footer-section">
+      <div class="footer-first">
+        <div class="footer">
+          <h4>Our Address</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="footer-map">
+            <img src="./images/map.png" alt="" />
+            <p>123 Street, New York, USA</p>
+          </div>
+
+          <div class="footer-call">
+            <img src="./images/call.jpeg" alt="" />
+            <p>+012 345 67890</p>
+          </div>
+
+          <div class="footer-mail">
+            <img src="./images/mail.jpeg" alt="" />
+            <p>info@example.com</p>
+          </div>
+
+          <div class="footer-icon">
+            <img src="./images/twitter.png" alt="" />
+            <img src="./images/facebook.png" alt="" />
+            <img src="./images/youtube.png" alt="" />
+            <img src="./images/insta.png" alt="" />
+            <img src="./images/linkedin.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-second">
+        <div class="footer">
+          <h4>Quick Links</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <div class="terms">
+            <i class="fa fa-angle-right"></i>
+            <p>Terms of use</p>
+          </div>
+
+          <!-- <div class="terms">
+                <i class="fa fa-angle-right"></i>
+                <p>Terms of use</p>
+              </div> -->
+        </div>
+      </div>
+
+      <div class="footer-third">
+        <div class="footer">
+          <h4>Newsletter</h4>
+        </div>
+
+        <div class="other-info">
+          <div class="footer-para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              beatae unde perspiciatis voluptate harum. Sit quibusdam corrupti
+              sapiente vero
+            </p>
+          </div>
+
+          <div class="footer-input">
+            <input type="text" name="" id="" placeholder="Email goes here" />
+            <a href="#"><button type="submit">Submit</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------- -->
+
+    <div class="last-cls">
+      <div class="lastest">
+        <p>
+          Copyright @ <span>Your Site Name</span>, All Right Reserved. Designed
+          By <span>HTML Codex</span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

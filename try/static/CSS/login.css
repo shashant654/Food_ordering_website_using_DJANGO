@@ -1,0 +1,147 @@
+* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        
+        /* ----------------------------------------  */
+        /* ------------------------------------------------ */
+        
+        .footer-section {
+          background-color: whitesmoke;
+          margin-top: 130px;
+          display: flex;
+          flex-direction: row;
+          gap: 80px;
+          padding: 60px;
+          height: 350px;
+        
+          /* padding-top: 60px; */
+        }
+        
+        .footer-first img {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+        }
+        
+        .footer {
+          color: orange;
+        }
+        
+        .footer-first .footer-icon img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+        }
+        
+        .other-info {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        
+        .footer-first {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 300px;
+          /* border: 1px solid red; */
+          margin-left: 30px;
+        }
+        
+        .footer-second {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 300px;
+          /* border: 1px solid red; */
+        }
+        
+        .footer-third {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 350px;
+          /* border: 1px solid red; */
+          margin-right: 50px;
+        }
+        
+        .footer-third .footer-input {
+          display: flex;
+          gap: 5px;
+        }
+        
+        .footer-third .footer-input input {
+          width: 250px;
+          height: 40px;
+          border-radius: 5px;
+          padding-left: 7px;
+          border: 0.3px solid orange;
+        }
+        
+        .footer-third .footer-input a button {
+          height: 40px;
+          width: 90px;
+          background-color: orange;
+          color: white;
+          border-radius: 5px;
+          border: none;
+        }
+        
+        .footer-map {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        
+        .footer-call {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        
+        .footer-mail {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        
+        .footer-icon {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        
+        .terms {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        }
+        
+        /* --------------------------------------------------- */
+        .last-cls {
+          height: 60px;
+          background-color: #fff;
+        }
+        
+        .lastest {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 30px;
+        }
+        
+        .lastest span {
+          color: orange;
+        }
+        
+        .fa-angle-right {
+          color: orange;
+        }
+        

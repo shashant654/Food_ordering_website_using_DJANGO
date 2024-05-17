@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#carouselExampleDark {
+  height: 400px;
+}
+
+.containerr {
+  position: relative;
+  background-image: url(../carousel-1.jpg);
+  width: 100%;
+  height: 400px;
+  background-size: 100% 150%;
+  /* color: white; */
+  /* background-size: cover; */
+}
+
+/* -------------------------------------------  */
+.container-9 {
+  background-color: white;
+  height: 650px;
+}
+
+.Contact-us {
+  height: 100px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.query {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  gap: 7px;
+}
+
+.Contact-us h4 {
+  font-weight: bold;
+  color: green;
+}
+
+.sub-icon {
+  height: 120px;
+  background-color: whitesmoke;
+  margin-left: 80px;
+  margin-right: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.direction .icons img {
+  height: 20px;
+  width: 20px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.first img {
+  height: 40px;
+  width: 40px;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.direction {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.direction img {
+  height: 40px;
+  width: 40px;
+}
+/* -----------------------------------------  */
+
+.map-cls {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.form-cls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-cls input {
+  height: 40px;
+  width: 470px;
+  padding-left: 10px;
+}
+
+.form-cls textarea {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.form-cls a button {
+  height: 45px;
+  width: 200px;
+  margin-left: 135px;
+  color: white;
+  background-color: orange;
+}
+
+.food-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 80px;
+}
+
+.food-blog h4 {
+  color: green;
+  font-weight: bold;
+}
+/* ----------------------------------------  */
+/* ------------------------------------------------ */
+
+.footer-section {
+  background-color: whitesmoke;
+  margin-top: 130px;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  padding: 60px;
+  height: 350px;
+
+  /* padding-top: 60px; */
+}
+
+.footer-first img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.footer {
+  color: orange;
+}
+
+.footer-first .footer-icon img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.other-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-first {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  /* border: 1px solid red; */
+  margin-left: 30px;
+}
+
+.footer-second {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  /* border: 1px solid red; */
+}
+
+.footer-third {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+  /* border: 1px solid red; */
+  margin-right: 50px;
+}
+
+.footer-third .footer-input {
+  display: flex;
+  gap: 5px;
+}
+
+.footer-third .footer-input input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 7px;
+  border: 0.3px solid orange;
+}
+
+.footer-third .footer-input a button {
+  height: 40px;
+  width: 90px;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.footer-map {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.footer-call {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.footer-mail {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.footer-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.terms {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+/* --------------------------------------------------- */
+.last-cls {
+  height: 60px;
+  background-color: #fff;
+}
+
+.lastest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.lastest span {
+  color: orange;
+}
+
+.fa-angle-right {
+  color: orange;
+}
